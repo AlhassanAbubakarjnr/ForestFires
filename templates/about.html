@@ -1,12 +1,128 @@
-<!DOCTYPE html><
-/html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Abot - Flask App</title>
+  <meta charset="UTF-8">
+  <title>About Forest Fire Prediction</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #ffcc70;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin: 15px 0;
+      color: #ddd;
+    }
+
+    h3 {
+      margin: 20px 0 10px;
+      color: #ff9800;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      max-width: 500px;
+    }
+
+    ul li {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      text-align: center;
+      transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    ul li:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .buttons {
+      margin-top: 25px;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      background: #ff9800;
+      color: #fff;
+      padding: 12px 22px;
+      margin: 8px;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .buttons a:hover {
+      background: #e68900;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome To The Flask App</h1>
-    <p> This Is The Abot Page..</p>
-    <a href = "/"> Back  To The home Page</a>
+  <div class="container">
+    <h1>About the Forest Fire Prediction Model</h1>
+
+    <p>
+      This application predicts the risk or intensity of forest fires using a trained <b>Machine Learning</b> model.  
+      It considers multiple weather and environmental factors that significantly influence the occurrence of fires.
+    </p>
+
+    <h3>🔑 Input Features:</h3>
+    <ul>
+      <li>🌡 Temperature</li>
+      <li>💧 Humidity (RH)</li>
+      <li>🌬 Wind Speed</li>
+      <li>🌧 Rain</li>
+      <li>🔥 FFMC</li>
+      <li>📊 DMC</li>
+      <li>⚡ ISI</li>
+      <li>🏷 Classes</li>
+      <li>🌍 Region</li>
+    </ul>
+
+    <p>
+      All inputs are preprocessed using a <b>Standard Scaler</b>, then passed into a <b>Ridge Regression</b> model  
+      which provides accurate predictions for fire risk.  
+      This system supports decision-making for early fire prevention and forest management.
+    </p>
+
+    <div class="buttons">
+      <a href="{{ url_for('index') }}">🏠 Home</a>
+      <a href="{{ url_for('predict_datapoints') }}">📊 Predict</a>
+    </div>
+  </div>
 </body>
 </html>
+

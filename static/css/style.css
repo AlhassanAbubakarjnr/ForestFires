@@ -1,40 +1,118 @@
- /* General page background */
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(to right, #74ebd5, #ACB6E5);
-    margin: 0;
-    padding: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* Card styling */
-.card {
-    border-radius: 15px;
-    border: none;
+.container {
+  width: 80%;              /* ⬅ wider */
+  max-width: 750px;        /* ⬅ limit so it doesn’t stretch too much */
+  background: rgba(255, 255, 255, 0.06);
+  padding: 20px 25px;      /* ⬅ less vertical padding */
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
-/* Headings */
 h1 {
-    font-weight: bold;
-    color: #0d6efd;
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+  color: #ffcc70;
 }
 
-/* Labels */
+.subtitle {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* ⬅ 2-column form to reduce height */
+  gap: 12px 15px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
 label {
-    font-weight: 500;
-    color: #333;
+  font-size: 0.85rem;
+  margin-bottom: 3px;
+  color: #ff9800;
 }
 
-/* Buttons */
-button {
-    transition: all 0.3s ease-in-out;
+input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
-button:hover {
-    transform: scale(1.05);
+input:focus {
+  background: rgba(255, 255, 255, 0.2);
 }
 
-/* Prediction result alert */
-.alert {
-    border-radius: 10px;
-    font-weight: 500;
+.predict-btn {
+  grid-column: span 2; /* ⬅ button spans both columns */
+  margin-top: 10px;
+  padding: 10px;
+  background: #ff9800;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
+
+.predict-btn:hover {
+  background: #e68900;
+  transform: scale(1.04);
+}
+
+.result-box {
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+.result-box h2 {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+  color: #ffcc70;
+}
+
+.buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.nav-btn {
+  text-decoration: none;
+  background: #007acc;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #005b99;
+  transform: scale(1.05);
+}
+

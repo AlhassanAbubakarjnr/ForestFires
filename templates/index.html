@@ -1,13 +1,22 @@
-<!DOCTYPE html><
-/html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Home - Flask App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forest Fire Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 <body>
-    <h1>Welcome To The Flask App</h1>
-    <p> This Is The Home Page..</p>
-    <a href = "/about"> Go To The about Page</a>
-    <a href = "/predictdata"> Go To The Prediction Page</a>
+  <div class="overlay"></div>
+  
+  <div class="home-container">
+    <h1>🔥 Forest Fire Prediction</h1>
+    <p class="subtitle">An intelligent system to predict and analyze forest fire risks</p>
+    
+    <div class="buttons">
+      <a href="{{ url_for('predict_datapoints') }}" class="nav-btn">🚀 Predict Now</a>
+      <a href="{{ url_for('about') }}" class="nav-btn">📖 About Model</a>
+    </div>
+  </div>
 </body>
 </html>
